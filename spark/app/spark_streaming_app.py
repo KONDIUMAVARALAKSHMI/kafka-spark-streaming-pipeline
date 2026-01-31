@@ -1,6 +1,9 @@
 """
-Spark Streaming Application for Real-Time User Activity Processing
-Consumes from Kafka, applies transformations, and writes to multiple sinks.
+My Spark Streaming Application - User Activity Project
+-------------------------------------------------------
+This is the main logic for my pipeline. It reads data from Kafka, 
+does some transformations (like windowing), and sends the results
+to PostgreSQL and my data lake.
 """
 
 import os
@@ -35,10 +38,10 @@ logger = logging.getLogger(__name__)
 
 
 class SparkStreamingPipeline:
-    """Main Spark Streaming application for user activity processing."""
+    # This class wraps all my Spark logic together.
 
     def __init__(self):
-        """Initialize the Spark Session and configuration."""
+        # Setting up the basics: Spark session, Kafka, and DB credentials.
         self.spark = self._create_spark_session()
         self.kafka_bootstrap_servers = os.getenv(
             'KAFKA_BOOTSTRAP_SERVERS', 'kafka:9092'
@@ -49,12 +52,8 @@ class SparkStreamingPipeline:
         self.data_lake_path = '/opt/spark/data/lake'
 
     def _create_spark_session(self) -> SparkSession:
-        """
-        Create and configure the Spark Session.
-
-        Returns:
-            Configured SparkSession
-        """
+        # Here I build the Spark Session. I added some JVM flags 
+        # to fix some errors I was seeing with Java 11/17.
         jvm_flags = (
             "--add-opens=java.base/java.lang=ALL-UNNAMED "
             "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED "
@@ -81,14 +80,12 @@ class SparkStreamingPipeline:
             .config('spark.driver.extraJavaOptions', jvm_flags) \
             .config('spark.executor.extraJavaOptions', jvm_flags) \
             .getOrCreate()
+        # Note: I set shuffle.partitions to 4 because I'm running this on a single machine (Docker),
+        # so I don't need a high number of partitions.
 
     def _get_event_schema(self) -> StructType:
-        """
-        Define the schema for incoming Kafka events.
-
-        Returns:
-            StructType defining the event schema
-        """
+        # Defining the JSON schema manually so Spark knows 
+        # what to expect from the Kafka events.
         return StructType([
             StructField('event_time', StringType(), True),
             StructField('user_id', StringType(), True),
@@ -112,6 +109,7 @@ class SparkStreamingPipeline:
             .option('subscribe', 'user_activity') \
             .option('startingOffsets', 'latest') \
             .load()
+        # We use readStream because this is a real-time data flow.
 
         return df
 
@@ -216,12 +214,8 @@ class SparkStreamingPipeline:
         return query
 
     def write_page_view_counts(self, df: DataFrame) -> None:
-        """
-        Calculate and write page view counts for 1-minute tumbling windows.
-
-        Args:
-            df: Input DataFrame
-        """
+        # Requirement: Calculate page views in 1-minute tumbling windows.
+        # This only looks at 'page_view' event types.
         page_views = df.filter(col('event_type') == 'page_view') \
             .withWatermark('event_time', '2 minutes') \
             .groupBy(
@@ -276,12 +270,8 @@ class SparkStreamingPipeline:
         return query
 
     def write_active_user_counts(self, df: DataFrame) -> None:
-        """
-        Calculate and write active user counts for 5-minute sliding windows (1-minute slide).
-
-        Args:
-            df: Input DataFrame
-        """
+        # Requirement: Count distinct active users in a 5-minute window that slides every 1 minute.
+        # I used approx_count_distinct for better performance on streams.
         active_users = df \
             .withWatermark('event_time', '2 minutes') \
             .groupBy(
@@ -331,19 +321,14 @@ class SparkStreamingPipeline:
         return query
 
     def write_user_sessions(self, df: DataFrame) -> None:
-        """
-        Track user sessions using stateful transformations.
-        Sessions start with 'session_start' and end with 'session_end' events.
-
-        Args:
-            df: Input DataFrame
-        """
+        # This tracks how long a user stays on the site.
+        # It starts a timer on 'session_start' and ends it on 'session_end'.
         session_events = df.filter(
             (col('event_type') == 'session_start') | (col('event_type') == 'session_end')
         )
 
-        # Use session_window (Spark 3.2+) for dynamic sessionization
-        # A session closes if no activity for 15 mins (timeout)
+        # I'm using Spark 3.2's session_window here because it's much easier
+        # to manage than manual state. It times out after 15 minutes of silence.
         from pyspark.sql.functions import session_window
         
         session_data = session_events \

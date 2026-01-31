@@ -1,7 +1,8 @@
-#!/usr/bin/env python
 """
-Data Producer for Kafka
-Generates simulated user activity events and publishes them to the 'user_activity' topic.
+My Kafka Data Producer
+-----------------------
+This script generates fake user events to test my pipeline.
+Included a feature to send "late" timestamps to test watermarking!
 """
 
 import json
@@ -53,16 +54,8 @@ class DataProducer:
             raise
 
     def generate_event(self, event_time: datetime = None, is_late: bool = False) -> Dict[str, Any]:
-        """
-        Generate a random user activity event.
-
-        Args:
-            event_time: Optional timestamp for the event (default: current time)
-            is_late: If True, generate an event with old timestamp (for testing watermarking)
-
-        Returns:
-            Dictionary containing the event data
-        """
+        # Generates a single event. Check out the 'is_late' part—it's how I tested
+        # the watermarking requirement by sending events from the past.
         if event_time is None:
             if is_late:
                 # Generate an event from 5 minutes ago (to test watermarking)

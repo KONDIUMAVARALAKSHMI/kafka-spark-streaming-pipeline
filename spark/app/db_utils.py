@@ -1,5 +1,7 @@
 """
-Database utility functions for the Spark Streaming application.
+Database Helpers
+----------------
+Contains the logic for connecting to PostgreSQL and doing IDempotent writes (UPSERTS).
 """
 
 import logging
@@ -11,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 
 class PostgreSQLConnector:
-    """Handles PostgreSQL connections and operations."""
+    # A simple wrapper for psycopg2 to talk to our DB.
 
     def __init__(self, db_url: str, db_user: str, db_password: str):
         """
@@ -30,12 +32,7 @@ class PostgreSQLConnector:
         self.connection = None
 
     def connect(self) -> Optional[object]:
-        """
-        Establish connection to PostgreSQL.
-
-        Returns:
-            Connection object or None if failed
-        """
+        # Connects to the DB using the JDBC-style URL provided by the Spark environment.
         try:
             # Parse the JDBC URL to extract PostgreSQL parameters
             url_parts = self.db_url.replace('jdbc:postgresql://', '').split('/')
@@ -65,18 +62,8 @@ class PostgreSQLConnector:
             logger.info("PostgreSQL connection closed")
 
     def execute_upsert(self, table: str, columns: list, values: list, pk_columns: list) -> bool:
-        """
-        Execute an upsert (INSERT ... ON CONFLICT DO UPDATE) operation.
-
-        Args:
-            table: Table name
-            columns: List of column names
-            values: List of tuples containing row data
-            pk_columns: List of column names that form the Primary Key
-        
-        Returns:
-            True if successful, False otherwise
-        """
+        # This is where the magic happens! It builds an UPSERT query so we don't 
+        # get errors if Spark tries to write the same batch twice.
         if not self.connection:
             logger.error("No database connection")
             return False
