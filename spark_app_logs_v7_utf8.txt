@@ -1,0 +1,39 @@
+﻿Picked up JAVA_TOOL_OPTIONS: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/sun.nio.cs=ALL-UNNAMED --add-opens=java.base/sun.security.action=ALL-UNNAMED --add-opens=java.base/sun.util.calendar=ALL-UNNAMED --add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED
+Picked up JAVA_TOOL_OPTIONS: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.nio=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/sun.nio.cs=ALL-UNNAMED --add-opens=java.base/sun.security.action=ALL-UNNAMED --add-opens=java.base/sun.util.calendar=ALL-UNNAMED --add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/01/30 17:43:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-01-30 17:43:11,659 - __main__ - INFO - Starting Spark Streaming Pipeline
+2026-01-30 17:43:11,659 - __main__ - INFO - Connecting to Kafka at kafka:9092
+2026-01-30 17:43:16,193 - __main__ - INFO - Events parsed and schema applied
+2026-01-30 17:43:16,214 - __main__ - INFO - Configuring data lake sink at /opt/spark/data/lake
+2026-01-30 17:43:16,313 - __main__ - ERROR - Error in pipeline: Partition column event_date not found in existing columns (event_time, user_id, page_url, event_type)
+Traceback (most recent call last):
+  File "/app/spark_streaming_app.py", line 425, in run
+    queries.append(self.write_to_data_lake(parsed_df))
+  File "/app/spark_streaming_app.py", line 152, in write_to_data_lake
+    query = df \
+  File "/opt/spark/python/pyspark/sql/streaming.py", line 1389, in start
+    return self._sq(self._jwrite.start())
+  File "/opt/spark/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    return_value = get_return_value(
+  File "/opt/spark/python/pyspark/sql/utils.py", line 196, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: Partition column event_date not found in existing columns (event_time, user_id, page_url, event_type)
+2026-01-30 17:43:16,328 - __main__ - INFO - Stopping Spark Session
+Traceback (most recent call last):
+  File "/app/spark_streaming_app.py", line 462, in <module>
+    main()
+  File "/app/spark_streaming_app.py", line 458, in main
+    pipeline.run()
+  File "/app/spark_streaming_app.py", line 425, in run
+    queries.append(self.write_to_data_lake(parsed_df))
+  File "/app/spark_streaming_app.py", line 152, in write_to_data_lake
+    query = df \
+  File "/opt/spark/python/pyspark/sql/streaming.py", line 1389, in start
+    return self._sq(self._jwrite.start())
+  File "/opt/spark/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1321, in __call__
+  File "/opt/spark/python/pyspark/sql/utils.py", line 196, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: Partition column event_date not found in existing columns (event_time, user_id, page_url, event_type)
+2026-01-30 17:43:16,513 - py4j.clientserver - INFO - Closing down clientserver connection

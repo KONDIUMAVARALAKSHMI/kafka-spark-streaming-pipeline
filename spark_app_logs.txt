@@ -1,0 +1,60 @@
+﻿Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/01/30 16:25:05 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Traceback (most recent call last):
+  File "/app/spark_streaming_app.py", line 443, in <module>
+    main()
+  File "/app/spark_streaming_app.py", line 438, in main
+    pipeline = SparkStreamingPipeline()
+  File "/app/spark_streaming_app.py", line 42, in __init__
+    self.spark = self._create_spark_session()
+  File "/app/spark_streaming_app.py", line 58, in _create_spark_session
+    return SparkSession.builder \
+  File "/opt/spark/python/pyspark/sql/session.py", line 269, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "/opt/spark/python/pyspark/context.py", line 483, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/opt/spark/python/pyspark/context.py", line 197, in __init__
+    self._do_init(
+  File "/opt/spark/python/pyspark/context.py", line 282, in _do_init
+    self._jsc = jsc or self._initialize_context(self._conf._jconf)
+  File "/opt/spark/python/pyspark/context.py", line 402, in _initialize_context
+    return self._jvm.JavaSparkContext(jconf)
+  File "/opt/spark/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1585, in __call__
+  File "/opt/spark/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 326, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.lang.ExceptionInInitializerError
+	at org.apache.spark.unsafe.array.ByteArrayMethods.<clinit>(ByteArrayMethods.java:56)
+	at org.apache.spark.memory.MemoryManager.defaultPageSizeBytes$lzycompute(MemoryManager.scala:264)
+	at org.apache.spark.memory.MemoryManager.defaultPageSizeBytes(MemoryManager.scala:254)
+	at org.apache.spark.memory.MemoryManager.$anonfun$pageSizeBytes$1(MemoryManager.scala:273)
+	at scala.runtime.java8.JFunction0$mcJ$sp.apply(JFunction0$mcJ$sp.java:23)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.memory.MemoryManager.<init>(MemoryManager.scala:273)
+	at org.apache.spark.memory.UnifiedMemoryManager.<init>(UnifiedMemoryManager.scala:58)
+	at org.apache.spark.memory.UnifiedMemoryManager$.apply(UnifiedMemoryManager.scala:207)
+	at org.apache.spark.SparkEnv$.create(SparkEnv.scala:320)
+	at org.apache.spark.SparkEnv$.createDriverEnv(SparkEnv.scala:194)
+	at org.apache.spark.SparkContext.createSparkEnv(SparkContext.scala:279)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:464)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.IllegalStateException: java.lang.NoSuchMethodException: java.nio.DirectByteBuffer.<init>(long,int)
+	at org.apache.spark.unsafe.Platform.<clinit>(Platform.java:113)
+	... 25 more
+Caused by: java.lang.NoSuchMethodException: java.nio.DirectByteBuffer.<init>(long,int)
+	at java.base/java.lang.Class.getConstructor0(Class.java:3763)
+	at java.base/java.lang.Class.getDeclaredConstructor(Class.java:2932)
+	at org.apache.spark.unsafe.Platform.<clinit>(Platform.java:71)
+	... 25 more
+

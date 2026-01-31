@@ -1,0 +1,133 @@
+﻿docker-compose : time
+="2026-01-30T23:36:29
++05:30" 
+level=warning msg="D:
+\\Desktop\\pipeline\\
+docker-compose.yml: 
+the attribute 
+`version` is 
+obsolete, it will be 
+ignored, please 
+remove it to avoid 
+potential confusion"
+At line:1 char:1
++ docker-compose 
+logs --tail=100 
+spark-app > 
+spark_app_tail.txt 
+2>&1
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (time="2   
+ 026-01-3...tial     
+confusion":Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+spark-app  | 2026-01-30 18:06:06,052 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:06,088 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:06,867 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:06,901 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:06,937 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:07,612 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:07,616 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:07,658 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:08,411 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:08,432 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:08,433 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:09,075 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:09,082 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:09,085 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:09,930 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:09,934 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:09,989 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:10,445 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:10,456 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:10,509 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:10,945 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:10,947 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:11,018 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:11,501 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:11,521 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:11,555 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:11,923 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:11,960 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:12,440 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:12,511 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:12,597 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:12,874 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:12,923 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:13,748 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:13,775 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:13,928 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:14,807 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:15,219 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:15,223 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:16,048 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:16,062 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:16,071 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:16,783 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:16,807 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:16,837 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:17,485 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:18,123 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:18,136 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:18,222 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:19,154 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:19,180 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:19,190 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:19,980 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:19,996 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:19,997 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:20,460 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:20,496 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:20,504 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:20,947 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:20,977 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:20,980 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:21,441 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:21,441 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:21,476 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:22,015 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:22,018 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:22,023 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:22,491 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:22,494 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:22,555 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:23,003 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:23,018 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:23,049 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:23,499 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:23,514 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:23,565 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:24,275 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:24,419 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:24,433 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:24,998 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:25,065 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:25,088 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:25,598 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:25,629 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:25,743 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:26,341 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:26,348 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:26,405 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:27,294 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:27,300 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:27,301 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:27,849 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:27,860 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:27,945 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:28,539 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:28,547 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:28,555 - py4j.clientserver - INFO - Received command c on object id p1
+spark-app  | 2026-01-30 18:06:29,038 - py4j.clientserver - INFO - Received command c on object id p0
+spark-app  | 2026-01-30 18:06:29,048 - py4j.clientserver - INFO - Received command c on object id p2
+spark-app  | 2026-01-30 18:06:29,054 - py4j.clientserver - INFO - Received command c on object id p1

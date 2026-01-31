@@ -1,0 +1,85 @@
+﻿docker-compose : time
+="2026-01-30T23:43:23
++05:30" 
+level=warning msg="D:
+\\Desktop\\pipeline\\
+docker-compose.yml: 
+the attribute 
+`version` is 
+obsolete, it will be 
+ignored, please 
+remove it to avoid 
+potential confusion"
+At line:1 char:55
++ ... /verify.py; 
+docker-compose run 
+spark-app python 
+/app/verify.py 
+--kafk ...
++                 ~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (time="2   
+ 026-01-3...tial     
+confusion":Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+time="2026-01-30T23:4
+3:23+05:30" 
+level=warning 
+msg="Found orphan 
+containers ([pipeline
+-spark-app-run-22892e
+40e63b pipeline-spark
+-app-run-3a68cdc5cf7b
+ pipeline-spark-app-r
+un-ab273bc3ed16 pipel
+ine-spark-app-run-a70
+4784c1bd6 pipeline-sp
+ark-app-run-cec98abd1
+7ba pipeline-spark-ap
+p-run-492e4c094f55 pi
+peline-spark-app-run-
+c7b909a7abec]) for 
+this project. If you 
+removed or renamed 
+this service in your 
+compose file, you 
+can run this command 
+with the 
+--remove-orphans 
+flag to clean it up."
+ Container db  
+Running
+ Container zookeeper 
+ Running
+ Container kafka  
+Running
+ Container zookeeper 
+ Waiting
+ Container zookeeper 
+ Healthy
+usage: verify.py 
+[-h] 
+[--kafka-servers 
+KAFKA_SERVERS] 
+[--db-host DB_HOST]
+                 
+[--db-user DB_USER] 
+[--db-password 
+DB_PASSWORD]
+                 
+[--db-name DB_NAME] 
+[--data-lake-path 
+DATA_LAKE_PATH]
+verify.py: error: 
+unrecognized 
+arguments: Idx
+

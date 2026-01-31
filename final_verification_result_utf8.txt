@@ -1,0 +1,368 @@
+﻿docker-compose : time
+="2026-01-30T23:41:32
++05:30" 
+level=warning msg="D:
+\\Desktop\\pipeline\\
+docker-compose.yml: 
+the attribute 
+`version` is 
+obsolete, it will be 
+ignored, please 
+remove it to avoid 
+potential confusion"
+At line:1 char:1
++ docker-compose run 
+spark-app python 
+/app/verify.py 
+--kafka-servers ka 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (time="2   
+ 026-01-3...tial     
+confusion":Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+time="2026-01-30T23:4
+1:33+05:30" 
+level=warning 
+msg="Found orphan 
+containers ([pipeline
+-spark-app-run-3a68cd
+c5cf7b pipeline-spark
+-app-run-ab273bc3ed16
+ pipeline-spark-app-r
+un-a704784c1bd6 pipel
+ine-spark-app-run-cec
+98abd17ba pipeline-sp
+ark-app-run-492e4c094
+f55 pipeline-spark-ap
+p-run-c7b909a7abec]) 
+for this project. If 
+you removed or 
+renamed this service 
+in your compose 
+file, you can run 
+this command with 
+the --remove-orphans 
+flag to clean it up."
+ Container db  
+Running
+ Container zookeeper 
+ Running
+ Container kafka  
+Running
+ Container zookeeper 
+ Waiting
+ Container zookeeper 
+ Healthy
+2026-01-30 
+18:11:36,388 - INFO 
+- ===================
+=====================
+====================
+2026-01-30 
+18:11:36,388 - INFO 
+- Real-Time 
+Streaming Pipeline 
+Verification
+2026-01-30 
+18:11:36,388 - INFO 
+- ===================
+=====================
+====================
+2026-01-30 
+18:11:36,388 - INFO 
+- 
+2026-01-30 
+18:11:36,388 - INFO 
+- Testing Docker 
+services...
+2026-01-30 
+18:11:36,399 - 
+WARNING - ΓÜá 
+docker-compose not 
+found, skipping 
+Docker service check
+2026-01-30 
+18:11:37,400 - INFO 
+- Testing Kafka 
+connection...
+2026-01-30 
+18:11:37,466 - INFO 
+- <BrokerConnection 
+node_id=bootstrap-0 
+host=kafka:9092 
+<connecting> [IPv4 
+('172.20.0.4', 
+9092)]>: connecting 
+to kafka:9092 
+[('172.20.0.4', 
+9092) IPv4]
+2026-01-30 
+18:11:37,467 - INFO 
+- Probing node 
+bootstrap-0 broker 
+version
+2026-01-30 
+18:11:37,469 - INFO 
+- <BrokerConnection 
+node_id=bootstrap-0 
+host=kafka:9092 
+<connecting> [IPv4 
+('172.20.0.4', 
+9092)]>: Connection 
+complete.
+2026-01-30 
+18:11:37,576 - INFO 
+- Broker version 
+identified as 2.5.0
+2026-01-30 
+18:11:37,576 - INFO 
+- Set configuration 
+api_version=(2, 5, 
+0) to skip auto 
+check_version 
+requests on startup
+2026-01-30 
+18:11:37,581 - INFO 
+- Closing the Kafka 
+producer with 
+9223372036.0 secs 
+timeout.
+2026-01-30 
+18:11:37,585 - INFO 
+- <BrokerConnection 
+node_id=bootstrap-0 
+host=kafka:9092 
+<connected> [IPv4 
+('172.20.0.4', 
+9092)]>: Closing 
+connection. 
+2026-01-30 
+18:11:37,586 - INFO 
+- Γ£ô Kafka 
+connection successful
+2026-01-30 
+18:11:37,586 - INFO 
+- Testing Kafka 
+topic 
+'user_activity'...
+2026-01-30 
+18:11:37,589 - INFO 
+- <BrokerConnection 
+node_id=bootstrap-0 
+host=kafka:9092 
+<connecting> [IPv4 
+('172.20.0.4', 
+9092)]>: connecting 
+to kafka:9092 
+[('172.20.0.4', 
+9092) IPv4]
+2026-01-30 
+18:11:37,589 - INFO 
+- Probing node 
+bootstrap-0 broker 
+version
+2026-01-30 
+18:11:37,592 - INFO 
+- <BrokerConnection 
+node_id=bootstrap-0 
+host=kafka:9092 
+<connecting> [IPv4 
+('172.20.0.4', 
+9092)]>: Connection 
+complete.
+2026-01-30 
+18:11:37,697 - INFO 
+- Broker version 
+identified as 2.5.0
+2026-01-30 
+18:11:37,697 - INFO 
+- Set configuration 
+api_version=(2, 5, 
+0) to skip auto 
+check_version 
+requests on startup
+2026-01-30 
+18:11:37,698 - 
+WARNING - group_id 
+is None: disabling 
+auto-commit.
+2026-01-30 
+18:11:37,703 - INFO 
+- <BrokerConnection 
+node_id=bootstrap-0 
+host=kafka:9092 
+<connected> [IPv4 
+('172.20.0.4', 
+9092)]>: Closing 
+connection. 
+2026-01-30 
+18:11:37,704 - INFO 
+- Γ£ô Topic 
+'user_activity' 
+exists
+2026-01-30 
+18:11:37,704 - INFO 
+- Testing PostgreSQL 
+connection...
+2026-01-30 
+18:11:37,722 - INFO 
+- Γ£ô PostgreSQL 
+connection successful
+2026-01-30 
+18:11:37,722 - INFO 
+- Testing database 
+tables...
+2026-01-30 
+18:11:37,756 - INFO 
+-   Γ£ô Table 
+'page_view_counts' 
+exists
+2026-01-30 
+18:11:37,759 - INFO 
+-   Γ£ô Table 
+'active_users' exists
+2026-01-30 
+18:11:37,763 - INFO 
+-   Γ£ô Table 
+'user_sessions' 
+exists
+2026-01-30 
+18:11:37,764 - INFO 
+- Testing data lake 
+directory...
+2026-01-30 
+18:11:37,783 - ERROR 
+- Γ£ù Data lake 
+directory does not 
+exist: ./data/lake
+2026-01-30 
+18:11:37,783 - INFO 
+- Testing event 
+producer (5 
+events)...
+2026-01-30 
+18:11:37,786 - INFO 
+- <BrokerConnection 
+node_id=bootstrap-0 
+host=kafka:9092 
+<connecting> [IPv4 
+('172.20.0.4', 
+9092)]>: connecting 
+to kafka:9092 
+[('172.20.0.4', 
+9092) IPv4]
+2026-01-30 
+18:11:37,786 - INFO 
+- Probing node 
+bootstrap-0 broker 
+version
+2026-01-30 
+18:11:37,788 - INFO 
+- <BrokerConnection 
+node_id=bootstrap-0 
+host=kafka:9092 
+<connecting> [IPv4 
+('172.20.0.4', 
+9092)]>: Connection 
+complete.
+2026-01-30 
+18:11:37,893 - INFO 
+- Broker version 
+identified as 2.5.0
+2026-01-30 
+18:11:37,893 - INFO 
+- Set configuration 
+api_version=(2, 5, 
+0) to skip auto 
+check_version 
+requests on startup
+2026-01-30 
+18:11:37,905 - INFO 
+- <BrokerConnection 
+node_id=1 
+host=kafka:9092 
+<connecting> [IPv4 
+('172.20.0.4', 
+9092)]>: connecting 
+to kafka:9092 
+[('172.20.0.4', 
+9092) IPv4]
+2026-01-30 
+18:11:37,906 - INFO 
+- <BrokerConnection 
+node_id=1 
+host=kafka:9092 
+<connecting> [IPv4 
+('172.20.0.4', 
+9092)]>: Connection 
+complete.
+2026-01-30 
+18:11:37,906 - INFO 
+- <BrokerConnection 
+node_id=bootstrap-0 
+host=kafka:9092 
+<connected> [IPv4 
+('172.20.0.4', 
+9092)]>: Closing 
+connection. 
+2026-01-30 
+18:11:37,936 - INFO 
+- <BrokerConnection 
+node_id=1 
+host=kafka:9092 
+<connected> [IPv4 
+('172.20.0.4', 
+9092)]>: Closing 
+connection. 
+2026-01-30 
+18:11:37,937 - INFO 
+- Γ£ô Successfully 
+sent 5 events to 
+Kafka
+2026-01-30 
+18:11:37,938 - INFO 
+- 
+2026-01-30 
+18:11:37,938 - INFO 
+- ===================
+=====================
+====================
+2026-01-30 
+18:11:37,938 - INFO 
+- Test Summary
+2026-01-30 
+18:11:37,938 - INFO 
+- ===================
+=====================
+====================
+2026-01-30 
+18:11:37,938 - INFO 
+- Passed: 5
+2026-01-30 
+18:11:37,938 - INFO 
+- Failed: 1
+2026-01-30 
+18:11:37,938 - INFO 
+- ===================
+=====================
+====================
+2026-01-30 
+18:11:37,938 - INFO 
+- 
+2026-01-30 
+18:11:37,938 - 
+WARNING - Γ£ù 1 
+test(s) failed. 
+Check logs above.
+

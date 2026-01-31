@@ -1,0 +1,127 @@
+﻿
+> py4j.protocol.Py4JJ
+avaError: An error 
+occurred while 
+calling None.org.apac
+he.spark.api.java.Jav
+aSparkContext.
+> : java.lang.Excepti
+onInInitializerError
+  	at org.apache.spar
+k.unsafe.array.ByteAr
+rayMethods.<clinit>(B
+yteArrayMethods.java:
+56)
+  	at org.apache.spar
+k.memory.MemoryManage
+r.defaultPageSizeByte
+s$lzycompute(MemoryMa
+nager.scala:264)
+  	at org.apache.spar
+k.memory.MemoryManage
+r.defaultPageSizeByte
+s(MemoryManager.scala
+:254)
+  	at org.apache.spar
+k.memory.MemoryManage
+r.$anonfun$pageSizeBy
+tes$1(MemoryManager.s
+cala:273)
+  	at scala.runtime.j
+ava8.JFunction0$mcJ$s
+p.apply(JFunction0$mc
+J$sp.java:23)
+  	at scala.Option.ge
+tOrElse(Option.scala:
+189)
+  	at org.apache.spar
+k.memory.MemoryManage
+r.<init>(MemoryManage
+r.scala:273)
+  	at org.apache.spar
+k.memory.UnifiedMemor
+yManager.<init>(Unifi
+edMemoryManager.scala
+:58)
+  	at org.apache.spar
+k.memory.UnifiedMemor
+yManager$.apply(Unifi
+edMemoryManager.scala
+:207)
+  	at org.apache.spar
+k.SparkEnv$.create(Sp
+arkEnv.scala:320)
+  	at org.apache.spar
+k.SparkEnv$.createDri
+verEnv(SparkEnv.scala
+:194)
+  	at org.apache.spar
+k.SparkContext.create
+SparkEnv(SparkContext
+.scala:279)
+  	at org.apache.spar
+k.SparkContext.<init>
+(SparkContext.scala:4
+64)
+  	at org.apache.spar
+k.api.java.JavaSparkC
+ontext.<init>(JavaSpa
+rkContext.scala:58)
+  	at java.base/jdk.i
+nternal.reflect.Direc
+tConstructorHandleAcc
+essor.newInstance(Dir
+ectConstructorHandleA
+ccessor.java:62)
+  	at java.base/java.
+lang.reflect.Construc
+tor.newInstanceWithCa
+ller(Constructor.java
+:502)
+  	at java.base/java.
+lang.reflect.Construc
+tor.newInstance(Const
+ructor.java:486)
+  	at py4j.reflection
+.MethodInvoker.invoke
+(MethodInvoker.java:2
+47)
+  	at py4j.reflection
+.ReflectionEngine.inv
+oke(ReflectionEngine.
+java:357)
+  	at py4j.Gateway.in
+voke(Gateway.java:238
+)
+> Caused by: java.lan
+g.IllegalStateExcepti
+on: java.lang.NoSuchM
+ethodException: java.
+nio.DirectByteBuffer.
+<init>(long,int)
+  	at org.apache.spar
+k.unsafe.Platform.<cl
+init>(Platform.java:1
+13)
+  	... 25 more
+> Caused by: java.lan
+g.NoSuchMethodExcepti
+on: java.nio.DirectBy
+teBuffer.<init>(long,
+int)
+  	at java.base/java.
+lang.Class.getConstru
+ctor0(Class.java:3763
+)
+  	at java.base/java.
+lang.Class.getDeclare
+dConstructor(Class.ja
+va:2932)
+  	at org.apache.spar
+k.unsafe.Platform.<cl
+init>(Platform.java:7
+1)
+  	... 25 more
+  
+
+
