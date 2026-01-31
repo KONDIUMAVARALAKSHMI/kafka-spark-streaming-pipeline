@@ -1,16 +1,11 @@
-IMPLEMENTATION_SUMMARY.md
+# Real-Time Data Pipeline - Project Report
 
-# Real-Time Streaming Data Pipeline - Implementation Summary
+This document summarizes what I've built for this project and how I implemented each part of the pipeline.
 
-## ✅ Project Completion Status
+## 🛠️ What I Implemented
 
-This document provides a comprehensive overview of the completed Real-Time Streaming Data Pipeline implementation.
-
-## 📋 Core Requirements Implementation
-
-### 1. ✅ Containerization with Docker Compose
-
-**Status**: COMPLETE
+### 1. Setting up the infrastructure (Docker)
+**Status**: Done
 
 **File**: [docker-compose.yml](docker-compose.yml)
 
@@ -579,20 +574,11 @@ For large-scale deployments:
 - [x] Startup scripts (start.sh, start.ps1)
 - [x] .gitignore for version control
 
-## 🎓 Learning Outcomes
-
-This implementation demonstrates:
-
-1. **Real-time Processing**: End-to-end streaming pipeline
-2. **Event Sourcing**: Kafka as event store
-3. **Stream Aggregations**: Tumbling and sliding windows
-4. **Stateful Processing**: Session tracking with state management
-5. **Watermarking**: Handling late-arriving data
-6. **Multi-sink Architecture**: Database, data lake, and message queue
-7. **Containerization**: Docker and Docker Compose
-8. **Data Quality**: Schema validation and error handling
-9. **Exactly-once Semantics**: Idempotent writes
-10. **Monitoring**: Logging and verification
+## 🎓 What I learned from this
+This project was a great way to get hands-on with:
+1. **Real-time Processing**: Building a pipeline that never stops.
+2. **Kafka & Spark**: Seeing how they work together to handle event data.
+3. **Fault Tolerance**: Using checkpoints and IDempotent writes to make the system stable.
 
 ## 📚 Additional Resources
 
